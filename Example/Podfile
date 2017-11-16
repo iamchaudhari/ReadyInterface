@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'ReadyInterface_Example' do
+  pod 'ReadyInterface', :path => '../'
+
+  target 'ReadyInterface_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
