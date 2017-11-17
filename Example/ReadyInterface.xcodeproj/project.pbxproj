@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		4A35CEC82734F86CB706F997 /* Pods_ReadyInterface_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EEAC398AE39EFEECFC88BF3 /* Pods_ReadyInterface_Tests.framework */; };
 		5384DAF51FBE7A5400427A36 /* ActionCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5384DAF41FBE7A5400427A36 /* ActionCardViewController.swift */; };
+		53FC11791FBF6FA60015FFE7 /* Pods_ReadyInterface_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53FC117A1FBF6FA60015FFE7 /* Pods_ReadyInterface_Example.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
-		CD6C27986A2DB12E194A60EB /* Pods_ReadyInterface_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5F11CDA31A79FB09A320E0B /* Pods_ReadyInterface_Example.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +33,8 @@
 		257AF1AC6B6C072D86028D6A /* Pods-ReadyInterface_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReadyInterface_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReadyInterface_Example/Pods-ReadyInterface_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		514A51D35228B733E18DDE9A /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		5384DAF41FBE7A5400427A36 /* ActionCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionCardViewController.swift; sourceTree = "<group>"; };
+		53FC11781FBF6F670015FFE7 /* ReadyInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ReadyInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		53FC117A1FBF6FA60015FFE7 /* Pods_ReadyInterface_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_ReadyInterface_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD01AFB9204008FA782 /* ReadyInterface_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReadyInterface_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -54,7 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD6C27986A2DB12E194A60EB /* Pods_ReadyInterface_Example.framework in Frameworks */,
+				53FC11791FBF6FA60015FFE7 /* Pods_ReadyInterface_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,6 +144,8 @@
 		7D9418E76DB3D27B1533B382 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				53FC117A1FBF6FA60015FFE7 /* Pods_ReadyInterface_Example.framework */,
+				53FC11781FBF6F670015FFE7 /* ReadyInterface.framework */,
 				E5F11CDA31A79FB09A320E0B /* Pods_ReadyInterface_Example.framework */,
 				9EEAC398AE39EFEECFC88BF3 /* Pods_ReadyInterface_Tests.framework */,
 			);
@@ -220,6 +224,7 @@
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = T6D665U343;
 						LastSwiftMigration = 0900;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
@@ -336,11 +341,23 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ReadyInterface_Example/Pods-ReadyInterface_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/MDFInternationalization/MDFInternationalization.framework",
+				"${BUILT_PRODUCTS_DIR}/MDFTextAccessibility/MDFTextAccessibility.framework",
+				"${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework",
+				"${BUILT_PRODUCTS_DIR}/MotionAnimator/MotionAnimator.framework",
+				"${BUILT_PRODUCTS_DIR}/MotionInterchange/MotionInterchange.framework",
+				"${BUILT_PRODUCTS_DIR}/MotionTransitioning/MotionTransitioning.framework",
 				"${BUILT_PRODUCTS_DIR}/ReadyInterface/ReadyInterface.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFInternationalization.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFTextAccessibility.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialComponents.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionAnimator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionInterchange.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionTransitioning.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReadyInterface.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -553,6 +570,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 24FB0E43FDBBE051F268C7F8 /* Pods-ReadyInterface_Tests.debug.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = T6D665U343;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -574,6 +592,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B1631893954B44E592565A56 /* Pods-ReadyInterface_Tests.release.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = T6D665U343;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",

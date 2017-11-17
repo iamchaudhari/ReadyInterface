@@ -8,6 +8,7 @@
 
 import UIKit
 import Kingfisher
+import MaterialComponents
 
 @objc public protocol ICActionCardViewDelegate {
     @objc optional func didClickCalloutButton(sender: ICActionCardView)

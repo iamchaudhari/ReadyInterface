@@ -38,5 +38,6 @@ User interface framework for some common components.
   }
 
   s.ios.dependency 'Kingfisher', '~> 4.0'
+  s.ios.dependency 'MaterialComponents', '~> 40'
  
 end
