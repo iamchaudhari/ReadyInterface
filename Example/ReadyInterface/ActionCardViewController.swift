@@ -41,16 +41,14 @@ class ActionCardViewController: UIViewController, ICActionCardViewDelegate {
         } else {
             cardView.configureContent(headline: "VIEW FROM CODE", title: "This view is generated programmatically", callout: "Click the button for view detail", buttonText: "View")
         }
-        cardView.buttonBackgroundColor = UIColor.white
         cardView.buttonRadius = 10.0
         cardView.cornerRadius = 10.0
-        cardView.buttonTextColor = UIColor.blue
-        cardView.buttonBackgroundColor = UIColor.white
+        cardView.buttonTextColor = UIColor.white
         cardView.cardBackgroundColor = UIColor.darkGray
         cardView.headlineColor = UIColor.lightGray
         cardView.titleColor = UIColor.white
         cardView.calloutColor = UIColor.white
-        cardView.showShadow(withSize: 6.0, color: UIColor.lightGray.withAlphaComponent(1.0))
+        cardView.showShadow(.resting)
         cardView.delegate = self
     }
     

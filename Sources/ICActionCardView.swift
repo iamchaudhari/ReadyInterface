@@ -17,13 +17,13 @@ import MaterialComponents
 @IBDesignable
 public class ICActionCardView: UIView {
 
-    @IBOutlet private var contentView: UIView!
+    @IBOutlet private var contentView: ShadowedView!
     @IBOutlet private weak var containerView: UIView!
     @IBOutlet private weak var cardImageView: UIImageView!
     @IBOutlet private weak var headlineLabel: UILabel!
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var calloutLabel: UILabel!
-    @IBOutlet private weak var calloutButton: UIButton!
+    @IBOutlet private weak var calloutButton: MDCFlatButton!
     
     private var shadowSize: CGFloat = 0.0
     private var shadowColor: UIColor = UIColor.clear
@@ -71,12 +71,7 @@ public class ICActionCardView: UIView {
     public var buttonTextColor: UIColor = UIColor.darkGray {
         didSet {
             calloutButton.tintColor = buttonTextColor
-        }
-    }
-    
-    public var buttonBackgroundColor: UIColor = UIColor.white {
-        didSet {
-            calloutButton.backgroundColor = buttonBackgroundColor
+            calloutButton.setTitleColor(buttonTextColor, for: .normal)
         }
     }
     
@@ -92,7 +87,6 @@ public class ICActionCardView: UIView {
     
     override public func layoutSubviews() {
         super.layoutSubviews()
-        CommonUtils.drawShadowFor(view: contentView, size: shadowSize, color: shadowColor, radius: cornerRadius)
     }
     
     public func configureContent(headline: String?, title: String?, callout: String?, buttonText: String?) {
@@ -100,11 +94,12 @@ public class ICActionCardView: UIView {
         titleLabel.text = title
         calloutLabel.text = callout
         calloutButton.setTitle(buttonText, for: .normal)
+        calloutButton.sizeToFit()
     }
     
-    public func showShadow(withSize size: CGFloat, color: UIColor) {
-        shadowSize = size
-        shadowColor = color
+    public func showShadow(_ elevation: ICShadowElevation) {
+        contentView.shadowLayer.isShadowMaskEnabled = false
+        contentView.setElevation(elevation: elevation)
     }
     
     public func loadCardImage(fromUrlString urlString: String, placeholderImage: UIImage?) {
@@ -118,12 +113,12 @@ public class ICActionCardView: UIView {
         CommonUtils.getResourceBundle(forClass: ICActionCardView.self).loadNibNamed("ICActionCardView", owner: self, options: nil)
         addSubview(contentView)
         contentView.frame = self.bounds
+        contentView.backgroundColor = UIColor.clear
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        buttonRadius = 10.0
     }
 
     
-    @IBAction func calloutButtonClicked(_ sender: UIButton) {
+    @IBAction func calloutButtonClicked(_ sender: MDCFlatButton) {
         delegate?.didClickCalloutButton?(sender: self)
     }
     

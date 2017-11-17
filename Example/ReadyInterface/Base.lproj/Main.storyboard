@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -75,36 +74,41 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wd4-Ib-rDO">
-                                <rect key="frame" x="16" y="28" width="288" height="256"/>
+                                <rect key="frame" x="20" y="40" width="280" height="244"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R4L-1c-pj2" customClass="ICActionCardView" customModule="ReadyInterface">
-                                        <rect key="frame" x="0.0" y="0.0" width="288" height="256"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="244"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="R4L-1c-pj2" secondAttribute="bottom" id="Ldh-dm-XWH"/>
-                                    <constraint firstItem="R4L-1c-pj2" firstAttribute="top" secondItem="wd4-Ib-rDO" secondAttribute="top" id="j8T-mf-4FB"/>
-                                    <constraint firstAttribute="trailing" secondItem="R4L-1c-pj2" secondAttribute="trailing" id="rcb-vg-0Ba"/>
-                                    <constraint firstItem="R4L-1c-pj2" firstAttribute="leading" secondItem="wd4-Ib-rDO" secondAttribute="leading" id="sPe-97-7Uh"/>
+                                    <constraint firstItem="R4L-1c-pj2" firstAttribute="top" secondItem="wd4-Ib-rDO" secondAttribute="top" id="D2Z-G5-tkY"/>
+                                    <constraint firstAttribute="trailing" secondItem="R4L-1c-pj2" secondAttribute="trailing" id="Yj3-RM-CYj"/>
+                                    <constraint firstItem="R4L-1c-pj2" firstAttribute="leading" secondItem="wd4-Ib-rDO" secondAttribute="leading" id="p8f-y1-N0a"/>
+                                    <constraint firstAttribute="bottom" secondItem="R4L-1c-pj2" secondAttribute="bottom" id="vrH-R7-HwJ"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aBM-Fu-tcH">
-                                <rect key="frame" x="16" y="292" width="288" height="256"/>
+                                <rect key="frame" x="20" y="304" width="280" height="244"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="wd4-Ib-rDO" firstAttribute="top" secondItem="PMF-tC-q7e" secondAttribute="bottom" constant="8" id="6u3-Zj-zd3"/>
-                            <constraint firstItem="aBM-Fu-tcH" firstAttribute="trailing" secondItem="nQI-m7-pd8" secondAttribute="trailingMargin" id="TW4-uZ-NR5"/>
-                            <constraint firstItem="aBM-Fu-tcH" firstAttribute="height" secondItem="wd4-Ib-rDO" secondAttribute="height" id="YJK-m5-w3v"/>
-                            <constraint firstItem="aBM-Fu-tcH" firstAttribute="top" secondItem="wd4-Ib-rDO" secondAttribute="bottom" constant="8" id="bAZ-Jl-jr3"/>
-                            <constraint firstItem="aBM-Fu-tcH" firstAttribute="leading" secondItem="nQI-m7-pd8" secondAttribute="leadingMargin" id="blN-Mj-MZK"/>
-                            <constraint firstItem="wd4-Ib-rDO" firstAttribute="trailing" secondItem="nQI-m7-pd8" secondAttribute="trailingMargin" id="d70-rC-HC8"/>
-                            <constraint firstItem="L0S-wB-xEy" firstAttribute="top" secondItem="aBM-Fu-tcH" secondAttribute="bottom" constant="20" id="gL7-Fz-O6L"/>
-                            <constraint firstItem="wd4-Ib-rDO" firstAttribute="leading" secondItem="nQI-m7-pd8" secondAttribute="leadingMargin" id="vD3-jb-xRV"/>
+                            <constraint firstAttribute="trailing" secondItem="wd4-Ib-rDO" secondAttribute="trailing" constant="20" id="0pJ-b1-yAV"/>
+                            <constraint firstItem="wd4-Ib-rDO" firstAttribute="top" secondItem="PMF-tC-q7e" secondAttribute="bottom" constant="20" id="Ejg-Gu-lbU"/>
+                            <constraint firstItem="L0S-wB-xEy" firstAttribute="top" secondItem="aBM-Fu-tcH" secondAttribute="bottom" constant="20" id="FMo-FX-SHQ"/>
+                            <constraint firstItem="aBM-Fu-tcH" firstAttribute="height" secondItem="wd4-Ib-rDO" secondAttribute="height" id="c4S-u9-OO0"/>
+                            <constraint firstItem="aBM-Fu-tcH" firstAttribute="top" secondItem="wd4-Ib-rDO" secondAttribute="bottom" constant="20" id="f4J-0o-FFg"/>
+                            <constraint firstItem="wd4-Ib-rDO" firstAttribute="leading" secondItem="nQI-m7-pd8" secondAttribute="leading" constant="20" id="gPW-tj-bsn"/>
+                            <constraint firstItem="aBM-Fu-tcH" firstAttribute="trailing" secondItem="wd4-Ib-rDO" secondAttribute="trailing" id="jW3-yy-xZv"/>
+                            <constraint firstItem="aBM-Fu-tcH" firstAttribute="leading" secondItem="wd4-Ib-rDO" secondAttribute="leading" id="uVQ-je-Bca"/>
                         </constraints>
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
