@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'ReadyInterface'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of ReadyInterface.'
+  s.summary          = 'UI/UX framework for iOS.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,25 +18,31 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+User interface framework for some common components.
                        DESC
 
   s.homepage         = 'https://github.com/iamchaudhari/ReadyInterface'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'iamchaudhari' => 'iam.chaudhari@gmail.com' }
+  s.author           = { 'iamchaudhari' => 'support@iamchaudhari.com' }
   s.source           = { :git => 'https://github.com/iamchaudhari/ReadyInterface.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.social_media_url = 'https://twitter.com/iamchaudhari'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '10.0'
+  s.requires_arc = true
 
-  s.source_files = 'ReadyInterface/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'ReadyInterface' => ['ReadyInterface/Assets/*.png']
-  # }
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.subspec "Common" do |common|
+    common.source_files = "Sources/#{common.base_name}/*.swift"
+
+    common.ios.dependency 'Kingfisher', '~> 4.0'
+  end
+
+  s.subspec "ActionCard" do |actionCard|
+    actionCard.source_files = "Sources/Modules/#{actionCard.base_name}/*.swift"
+    actionCard.resources = ["Sources/Modules/#{actionCard.base_name}/*.{xib}"]
+
+    actionCard.dependency "ReadyInterface/Common"
+  end
+ 
 end
