@@ -32,17 +32,11 @@ User interface framework for some common components.
   s.requires_arc = true
 
 
-  s.subspec "Common" do |common|
-    common.source_files = "Sources/#{common.base_name}/*.swift"
+  s.source_files = ["Sources/*.swift", "Sources/**/*.swift", "Sources/Common/*.swift"]
+  s.resource_bundles = {
+    "ReadyInterface" => ["Sources/*.xib"],
+  }
 
-    common.ios.dependency 'Kingfisher', '~> 4.0'
-  end
-
-  s.subspec "ActionCard" do |actionCard|
-    actionCard.source_files = "Sources/Modules/#{actionCard.base_name}/*.swift"
-    actionCard.resources = ["Sources/Modules/#{actionCard.base_name}/*.{xib}"]
-
-    actionCard.dependency "ReadyInterface/Common"
-  end
+  s.ios.dependency 'Kingfisher', '~> 4.0'
  
 end

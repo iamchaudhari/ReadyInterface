@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="mWQ-uH-ynS">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,17 +15,17 @@
             <objects>
                 <tableViewController id="bgw-hk-tww" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="9Ec-Jv-3oa">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
                             <tableViewSection headerTitle="Cards" id="SQ1-8d-mWV">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="E1w-wY-IWD" detailTextLabel="MPJ-wI-mb3" style="IBUITableViewCellStyleSubtitle" id="Mpr-m5-Yym">
-                                        <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Mpr-m5-Yym" id="Z7K-6V-JnZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Action Card" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="E1w-wY-IWD">
@@ -45,7 +45,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="hZF-xP-adH" kind="showDetail" identifier="segueActionCard" id="4dC-1Z-owA"/>
+                                            <segue destination="hZF-xP-adH" kind="show" id="iEJ-Qa-1kk"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -62,38 +62,56 @@
             </objects>
             <point key="canvasLocation" x="-500" y="22.938530734632685"/>
         </scene>
-        <!--View Controller-->
+        <!--Action Card View Controller-->
         <scene sceneID="Za1-iZ-uez">
             <objects>
-                <viewController id="hZF-xP-adH" sceneMemberID="viewController">
+                <viewController id="hZF-xP-adH" customClass="ActionCardViewController" customModule="ReadyInterface_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PMF-tC-q7e"/>
                         <viewControllerLayoutGuide type="bottom" id="L0S-wB-xEy"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="nQI-m7-pd8">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5fR-sy-y6D" customClass="ICActionCardView" customModule="ReadyInterface">
-                                <rect key="frame" x="16" y="28" width="343" height="200"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wd4-Ib-rDO">
+                                <rect key="frame" x="16" y="28" width="288" height="256"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R4L-1c-pj2" customClass="ICActionCardView" customModule="ReadyInterface">
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="256"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="rDi-0g-O4p"/>
+                                    <constraint firstAttribute="bottom" secondItem="R4L-1c-pj2" secondAttribute="bottom" id="Ldh-dm-XWH"/>
+                                    <constraint firstItem="R4L-1c-pj2" firstAttribute="top" secondItem="wd4-Ib-rDO" secondAttribute="top" id="j8T-mf-4FB"/>
+                                    <constraint firstAttribute="trailing" secondItem="R4L-1c-pj2" secondAttribute="trailing" id="rcb-vg-0Ba"/>
+                                    <constraint firstItem="R4L-1c-pj2" firstAttribute="leading" secondItem="wd4-Ib-rDO" secondAttribute="leading" id="sPe-97-7Uh"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aBM-Fu-tcH">
+                                <rect key="frame" x="16" y="292" width="288" height="256"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="5fR-sy-y6D" firstAttribute="trailing" secondItem="nQI-m7-pd8" secondAttribute="trailingMargin" id="65O-YJ-GM7"/>
-                            <constraint firstItem="5fR-sy-y6D" firstAttribute="leading" secondItem="nQI-m7-pd8" secondAttribute="leadingMargin" id="G1G-Si-dpv"/>
-                            <constraint firstItem="5fR-sy-y6D" firstAttribute="top" secondItem="PMF-tC-q7e" secondAttribute="bottom" constant="8" id="UhZ-4m-iuN"/>
+                            <constraint firstItem="wd4-Ib-rDO" firstAttribute="top" secondItem="PMF-tC-q7e" secondAttribute="bottom" constant="8" id="6u3-Zj-zd3"/>
+                            <constraint firstItem="aBM-Fu-tcH" firstAttribute="trailing" secondItem="nQI-m7-pd8" secondAttribute="trailingMargin" id="TW4-uZ-NR5"/>
+                            <constraint firstItem="aBM-Fu-tcH" firstAttribute="height" secondItem="wd4-Ib-rDO" secondAttribute="height" id="YJK-m5-w3v"/>
+                            <constraint firstItem="aBM-Fu-tcH" firstAttribute="top" secondItem="wd4-Ib-rDO" secondAttribute="bottom" constant="8" id="bAZ-Jl-jr3"/>
+                            <constraint firstItem="aBM-Fu-tcH" firstAttribute="leading" secondItem="nQI-m7-pd8" secondAttribute="leadingMargin" id="blN-Mj-MZK"/>
+                            <constraint firstItem="wd4-Ib-rDO" firstAttribute="trailing" secondItem="nQI-m7-pd8" secondAttribute="trailingMargin" id="d70-rC-HC8"/>
+                            <constraint firstItem="L0S-wB-xEy" firstAttribute="top" secondItem="aBM-Fu-tcH" secondAttribute="bottom" constant="20" id="gL7-Fz-O6L"/>
+                            <constraint firstItem="wd4-Ib-rDO" firstAttribute="leading" secondItem="nQI-m7-pd8" secondAttribute="leadingMargin" id="vD3-jb-xRV"/>
                         </constraints>
                     </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="programmaticContainer" destination="aBM-Fu-tcH" id="B1b-zF-ssv"/>
+                        <outlet property="viewFromXib" destination="R4L-1c-pj2" id="Mlc-1v-Yjv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sxY-1k-qXA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -105,7 +123,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mWQ-uH-ynS" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HFB-kV-9Tu">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
