@@ -14,10 +14,9 @@ import MaterialComponents
     @objc optional func didClickCalloutButton(sender: ICActionCardView)
 }
 
-@IBDesignable
 public class ICActionCardView: UIView {
 
-    @IBOutlet private var contentView: ShadowedView!
+    @IBOutlet private var contentView: ICShadowedView!
     @IBOutlet private weak var containerView: UIView!
     @IBOutlet private weak var cardImageView: UIImageView!
     @IBOutlet private weak var headlineLabel: UILabel!

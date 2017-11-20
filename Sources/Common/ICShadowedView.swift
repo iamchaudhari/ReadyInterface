@@ -1,5 +1,5 @@
 //
-//  ShadowedView.swift
+//  ICShadowedView.swift
 //  ReadyInterface
 //
 //  Created by Dhyanesh Chaudhari on 2017-11-17.
@@ -13,7 +13,7 @@ public enum ICShadowElevation {
     case dialog
 }
 
-class ShadowedView: UIView {
+class ICShadowedView: UIView {
     
     override class var layerClass: AnyClass {
         return MDCShadowLayer.self
