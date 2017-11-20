@@ -11,6 +11,7 @@ import MaterialComponents
 public enum ICShadowElevation {
     case resting
     case dialog
+    case none
 }
 
 class ICShadowedView: UIView {
@@ -24,7 +25,7 @@ class ICShadowedView: UIView {
     }
 
     func setDefaultElevation() {
-        self.shadowLayer.elevation = .cardResting
+        self.shadowLayer.elevation = .none
     }
     
     func setElevation(elevation: ICShadowElevation) {
@@ -37,6 +38,8 @@ class ICShadowedView: UIView {
             return .cardPickedUp
         case .dialog:
             return .dialog
+        case .none:
+            return .none
         }
     }
     

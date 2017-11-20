@@ -74,10 +74,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wd4-Ib-rDO">
-                                <rect key="frame" x="20" y="40" width="280" height="244"/>
+                                <rect key="frame" x="20" y="40" width="280" height="240"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R4L-1c-pj2" customClass="ICActionCardView" customModule="ReadyInterface">
-                                        <rect key="frame" x="0.0" y="0.0" width="280" height="244"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="240"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                 </subviews>
@@ -85,21 +85,23 @@
                                 <constraints>
                                     <constraint firstItem="R4L-1c-pj2" firstAttribute="top" secondItem="wd4-Ib-rDO" secondAttribute="top" id="D2Z-G5-tkY"/>
                                     <constraint firstAttribute="trailing" secondItem="R4L-1c-pj2" secondAttribute="trailing" id="Yj3-RM-CYj"/>
+                                    <constraint firstAttribute="height" constant="240" id="hOG-p9-ZOl"/>
                                     <constraint firstItem="R4L-1c-pj2" firstAttribute="leading" secondItem="wd4-Ib-rDO" secondAttribute="leading" id="p8f-y1-N0a"/>
                                     <constraint firstAttribute="bottom" secondItem="R4L-1c-pj2" secondAttribute="bottom" id="vrH-R7-HwJ"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aBM-Fu-tcH">
-                                <rect key="frame" x="20" y="304" width="280" height="244"/>
+                                <rect key="frame" x="20" y="300" width="280" height="240"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="VbC-tK-G5X"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="wd4-Ib-rDO" secondAttribute="trailing" constant="20" id="0pJ-b1-yAV"/>
                             <constraint firstItem="wd4-Ib-rDO" firstAttribute="top" secondItem="PMF-tC-q7e" secondAttribute="bottom" constant="20" id="Ejg-Gu-lbU"/>
-                            <constraint firstItem="L0S-wB-xEy" firstAttribute="top" secondItem="aBM-Fu-tcH" secondAttribute="bottom" constant="20" id="FMo-FX-SHQ"/>
-                            <constraint firstItem="aBM-Fu-tcH" firstAttribute="height" secondItem="wd4-Ib-rDO" secondAttribute="height" id="c4S-u9-OO0"/>
                             <constraint firstItem="aBM-Fu-tcH" firstAttribute="top" secondItem="wd4-Ib-rDO" secondAttribute="bottom" constant="20" id="f4J-0o-FFg"/>
                             <constraint firstItem="wd4-Ib-rDO" firstAttribute="leading" secondItem="nQI-m7-pd8" secondAttribute="leading" constant="20" id="gPW-tj-bsn"/>
                             <constraint firstItem="aBM-Fu-tcH" firstAttribute="trailing" secondItem="wd4-Ib-rDO" secondAttribute="trailing" id="jW3-yy-xZv"/>
@@ -110,11 +112,64 @@
                     <connections>
                         <outlet property="programmaticContainer" destination="aBM-Fu-tcH" id="B1b-zF-ssv"/>
                         <outlet property="viewFromXib" destination="R4L-1c-pj2" id="Mlc-1v-Yjv"/>
+                        <outlet property="xibContainer" destination="wd4-Ib-rDO" id="mJD-2H-2W2"/>
+                        <segue destination="ddd-cL-zU6" kind="presentation" identifier="segueActionDetail" id="Ki2-IP-RVK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sxY-1k-qXA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="568.79999999999995" y="22.938530734632685"/>
+        </scene>
+        <!--Action Card Detail View Controller-->
+        <scene sceneID="Kjr-kz-N6m">
+            <objects>
+                <viewController id="ddd-cL-zU6" customClass="ActionCardDetailViewController" customModule="ReadyInterface_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qJz-D0-1aH"/>
+                        <viewControllerLayoutGuide type="bottom" id="E4A-2i-wl5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ags-VQ-PKB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QzZ-Yx-fMk" customClass="ICActionCardView" customModule="ReadyInterface">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="240"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="8kk-el-N7k"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6MT-AR-50c">
+                                <rect key="frame" x="258" y="8" width="48" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="6t6-nJ-Hh5"/>
+                                    <constraint firstAttribute="width" constant="48" id="A1m-26-FNg"/>
+                                </constraints>
+                                <state key="normal" title="Close">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="closeButtonClicked:" destination="ddd-cL-zU6" eventType="touchUpInside" id="Zlk-Kg-bW1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.59999999999999998" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="6MT-AR-50c" secondAttribute="trailing" constant="14" id="36R-Of-dRC"/>
+                            <constraint firstItem="QzZ-Yx-fMk" firstAttribute="top" secondItem="ags-VQ-PKB" secondAttribute="top" id="41O-tQ-ayb"/>
+                            <constraint firstAttribute="trailing" secondItem="QzZ-Yx-fMk" secondAttribute="trailing" id="f7V-D4-kbW"/>
+                            <constraint firstItem="QzZ-Yx-fMk" firstAttribute="leading" secondItem="ags-VQ-PKB" secondAttribute="leading" id="fV2-hc-Ahc"/>
+                            <constraint firstItem="6MT-AR-50c" firstAttribute="top" secondItem="ags-VQ-PKB" secondAttribute="top" constant="8" id="iFL-Ao-a4B"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="viewFromXib" destination="QzZ-Yx-fMk" id="uth-zT-C7L"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zlU-Mf-McS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1552.5" y="21.12676056338028"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="v7Y-rE-BwP">

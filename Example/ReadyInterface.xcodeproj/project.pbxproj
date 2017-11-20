@@ -10,6 +10,9 @@
 		4A35CEC82734F86CB706F997 /* Pods_ReadyInterface_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EEAC398AE39EFEECFC88BF3 /* Pods_ReadyInterface_Tests.framework */; };
 		5384DAF51FBE7A5400427A36 /* ActionCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5384DAF41FBE7A5400427A36 /* ActionCardViewController.swift */; };
 		53FC11791FBF6FA60015FFE7 /* Pods_ReadyInterface_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53FC117A1FBF6FA60015FFE7 /* Pods_ReadyInterface_Example.framework */; };
+		53FC11821FC3406A0015FFE7 /* CardPresentAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FC11811FC3406A0015FFE7 /* CardPresentAnimationController.swift */; };
+		53FC11841FC3428D0015FFE7 /* AnimationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FC11831FC3428D0015FFE7 /* AnimationHelper.swift */; };
+		53FC11861FC346DC0015FFE7 /* ActionCardDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FC11851FC346DC0015FFE7 /* ActionCardDetailViewController.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
@@ -35,6 +38,9 @@
 		5384DAF41FBE7A5400427A36 /* ActionCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionCardViewController.swift; sourceTree = "<group>"; };
 		53FC11781FBF6F670015FFE7 /* ReadyInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ReadyInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		53FC117A1FBF6FA60015FFE7 /* Pods_ReadyInterface_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_ReadyInterface_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		53FC11811FC3406A0015FFE7 /* CardPresentAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPresentAnimationController.swift; sourceTree = "<group>"; };
+		53FC11831FC3428D0015FFE7 /* AnimationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationHelper.swift; sourceTree = "<group>"; };
+		53FC11851FC346DC0015FFE7 /* ActionCardDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionCardDetailViewController.swift; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* ReadyInterface_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReadyInterface_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -95,10 +101,13 @@
 		607FACD21AFB9204008FA782 /* Example for ReadyInterface */ = {
 			isa = PBXGroup;
 			children = (
+				607FACD31AFB9204008FA782 /* Supporting Files */,
+				607FACDC1AFB9204008FA782 /* Images.xcassets */,
+				53FC11831FC3428D0015FFE7 /* AnimationHelper.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				5384DAF41FBE7A5400427A36 /* ActionCardViewController.swift */,
-				607FACDC1AFB9204008FA782 /* Images.xcassets */,
-				607FACD31AFB9204008FA782 /* Supporting Files */,
+				53FC11811FC3406A0015FFE7 /* CardPresentAnimationController.swift */,
+				53FC11851FC346DC0015FFE7 /* ActionCardDetailViewController.swift */,
 			);
 			name = "Example for ReadyInterface";
 			path = ReadyInterface;
@@ -390,7 +399,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53FC11841FC3428D0015FFE7 /* AnimationHelper.swift in Sources */,
 				5384DAF51FBE7A5400427A36 /* ActionCardViewController.swift in Sources */,
+				53FC11861FC346DC0015FFE7 /* ActionCardDetailViewController.swift in Sources */,
+				53FC11821FC3406A0015FFE7 /* CardPresentAnimationController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
