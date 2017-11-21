@@ -16,7 +16,7 @@ class ActionCardViewController: UIViewController, ICActionCardViewDelegate, UIVi
     @IBOutlet private weak var xibContainer: UIView!
     
     private var viewFromCode: ICActionCardView!
-    private var cornerRadius: CGFloat = 10.0
+    private var cornerRadius: CGFloat = 0.0
     private var viewContainerBeingAnimated: UIView?
     
     override func viewDidLoad() {
@@ -38,21 +38,22 @@ class ActionCardViewController: UIViewController, ICActionCardViewDelegate, UIVi
 
     
     private func configureView(cardView: ICActionCardView, isXib: Bool) {
-        cardView.loadCardImage(fromUrlString: "", placeholderImage: nil)
         if (isXib) {
+            cardView.loadCardImage(fromUrlString: "https://www.gstatic.com/angular/material-adaptive/shrine/fish_bowl.png", placeholderImage: UIImage(named: "placeholder"))
             cardView.configureContent(headline: "VIEW FROM XIB", title: "This view is generated from Xib", callout: "Click the button for view detail", buttonText: "View")
             cardView.tag = 1
         } else {
+            cardView.loadCardImage(fromUrlString: "https://www.gstatic.com/angular/material-adaptive/shrine/surfboard.png", placeholderImage: UIImage(named: "placeholder"))
             cardView.configureContent(headline: "VIEW FROM CODE", title: "This view is generated programmatically", callout: "Click the button for view detail", buttonText: "View")
             cardView.tag = 2
         }
         cardView.buttonRadius = cornerRadius
         cardView.cornerRadius = cornerRadius
-        cardView.buttonTextColor = UIColor.white
-        cardView.cardBackgroundColor = UIColor.darkGray
+        cardView.buttonTextColor = UIColor.blue
+        cardView.cardBackgroundColor = UIColor.white
         cardView.headlineColor = UIColor.lightGray
-        cardView.titleColor = UIColor.white
-        cardView.calloutColor = UIColor.white
+        cardView.titleColor = UIColor.darkGray
+        cardView.calloutColor = UIColor.darkGray
         cardView.showShadow(.resting)
         cardView.delegate = self
     }
@@ -73,18 +74,22 @@ class ActionCardViewController: UIViewController, ICActionCardViewDelegate, UIVi
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destinationVC = segue.destination
-        destinationVC.transitioningDelegate = self
+        if let destinationVC = segue.destination as? ActionCardDetailViewController {
+            destinationVC.cornerRadius = cornerRadius
+            destinationVC.cardImage = (viewContainerBeingAnimated == xibContainer) ? viewFromXib.cardImage : viewFromCode.cardImage
+            destinationVC.clickedFromXib = (viewContainerBeingAnimated == xibContainer) ? true : false
+            destinationVC.transitioningDelegate = self
+        }
     }
     
     // MARK: - UIViewControllerTransitioningDelegate
     
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return CardPresentAnimationController(originFrame: viewContainerBeingAnimated!.frame, cornerRadius: cornerRadius)
+        return ICCardPresentAnimationController(originFrame: viewContainerBeingAnimated!.frame, cornerRadius: cornerRadius, animationDuration: 0.6)
     }
     
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return CardDismissAnimationController(destinationFrame: viewContainerBeingAnimated!.frame, cornerRadius: cornerRadius)
+        return ICCardDismissAnimationController(destinationFrame: viewContainerBeingAnimated!.frame, cornerRadius: cornerRadius, animationDuration: 0.6)
     }
 
 }

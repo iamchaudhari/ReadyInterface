@@ -8,21 +8,23 @@
 
 import UIKit
 
-class CardPresentAnimationController: NSObject, UIViewControllerAnimatedTransitioning {
+public class ICCardPresentAnimationController: NSObject, UIViewControllerAnimatedTransitioning {
     
     private let originFrame: CGRect
     private let cornerRadius: CGFloat
+    private let animationDuration: TimeInterval
     
-    init(originFrame: CGRect, cornerRadius: CGFloat) {
+    public init(originFrame: CGRect, cornerRadius: CGFloat, animationDuration: TimeInterval) {
         self.originFrame = originFrame
         self.cornerRadius = cornerRadius
+        self.animationDuration = animationDuration
     }
     
-    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        return 0.6
+    public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
+        return animationDuration
     }
     
-    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+    public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         // Extract a reference to both the view controller being replaced and the one being presented. Make a snapshot of what the screen will look like after the transition.
         guard let fromVC = transitionContext.viewController(forKey: .from),
         let toVC = transitionContext.viewController(forKey: .to),
@@ -70,21 +72,23 @@ class CardPresentAnimationController: NSObject, UIViewControllerAnimatedTransiti
     }
 }
 
-class CardDismissAnimationController: NSObject, UIViewControllerAnimatedTransitioning {
+public class ICCardDismissAnimationController: NSObject, UIViewControllerAnimatedTransitioning {
     
     private let destinationFrame: CGRect
     private let cornerRadius: CGFloat
+    private let animationDuration: TimeInterval
     
-    init(destinationFrame: CGRect, cornerRadius: CGFloat) {
+    public init(destinationFrame: CGRect, cornerRadius: CGFloat, animationDuration: TimeInterval) {
         self.destinationFrame = destinationFrame
         self.cornerRadius = cornerRadius
+        self.animationDuration = animationDuration
     }
     
-    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        return 0.6
+    public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
+        return animationDuration
     }
     
-    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+    public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         guard let fromVC = transitionContext.viewController(forKey: .from),
         let toVC = transitionContext.viewController(forKey: .to),
         let snapshot = fromVC.view.snapshotView(afterScreenUpdates: true)

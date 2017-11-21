@@ -31,7 +31,7 @@ public class ICActionCardView: UIView {
     @IBInspectable
     public var cornerRadius: CGFloat = 5.0 {
         didSet {
-            containerView.clipsToBounds = false
+            containerView.clipsToBounds = true
             containerView.layer.cornerRadius = cornerRadius
         }
     }
@@ -41,6 +41,10 @@ public class ICActionCardView: UIView {
             calloutButton.clipsToBounds = true
             calloutButton.layer.cornerRadius = buttonRadius
         }
+    }
+    
+    public var cardImage: UIImage? {
+        return (cardImageView != nil) ? cardImageView.image : nil
     }
     
     public var cardBackgroundColor: UIColor = UIColor.clear {
@@ -106,6 +110,10 @@ public class ICActionCardView: UIView {
             return
         }
         cardImageView.kf.setImage(with: url, placeholder: placeholderImage)
+    }
+    
+    public func loadCardImage(image: UIImage) {
+        cardImageView.image = image
     }
     
     private func commonInit() {
